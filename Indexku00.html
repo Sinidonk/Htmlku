@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Posting</title>
+ <link rel="stylesheet" href="Css/StyleFontKu.css">
+  <link rel="stylesheet" href="Css/StyleKu.css">
+</head>
+<body>
+
+ <!-- Kepala -->
+ <div class="Kepala">
+ <div class="MenuUtama" onclick="MenuUtama()">
+ <div class="garis"></div>
+ <div class="garis"></div>
+ <div class="garis"></div>
+ </div>
+ <div class="Kokan">
+ <div class="Header"></div>
+ <div id="Mode" class="icomode"></div>
+ <div id="susun" class="susun"></div>
+ </div>
+ </div>
+  <!-- Susuna Menu -->
+ <div id="SubMenu1" class="SubMenu1">
+ <a href="#" onclick="Terpilih(event, 'Fatihah.html')">Asmaul Husna</a>
+ <a href="#" onclick="Terpilih(event, 'Haji.html')">Alquran & Tafsir</a>
+   
+   
+ <a href="javascript:void(0);" onclick="toggleSubMenu(event, 'SubMenu2')">Surat Pilihan
+ <span class="Tpanah">&#9654;</span>
+ </a>
+ <div id="SubMenu2" class="SubMenu2 Terpilih">
+ <a href="#" onclick="Terpilih(event, 'yasin.html')">Surat Yasin</a>
+ <a href="#" onclick="Terpilih(event, 'rohman.html')">Surat Ar-Rohman</a>
+   <a href="#" onclick="Terpilih(event, 'mulk.html')">Surat Al-Mulk</a>
+ <a href="#" onclick="Terpilih(event, 'waqiah.html')">Surat Al-Waqiah</a>
+   <a href="#" onclick="Terpilih(event, 'kahfi.html')">Surat Al-Kahfi</a>
+   <a href="#" onclick="Terpilih(event, 'JA.html')">Juz 'Amma</a>
+ <a href="#" onclick="Terpilih(event, 'KhQ.html')">Doa Khotam Al Quran</a>
+ </div>
+     
+     <a href="javascript:void(0);" onclick="toggleSubMenu(event, 'SubMenu3')">Hadiah Tahlil
+ <span class="Tpanah">&#9654;</span>
+ </a>
+ <div id="SubMenu3" class="SubMenu2 Terpilih">
+ <a href="#" onclick="Terpilih(event, 'Hadiah.html')">Hadiah (Tahlil)</a>
+ <a href="#" onclick="Terpilih(event, 'Barjanji.html')">Barjanji</a>
+   <a href="#" onclick="Terpilih(event, 'Manaqib.html')">Manaqib</a>
+   <a href="#" onclick="Terpilih(event, 'Istighostah.html')">Istighotsah</a>
+ <a href="#" onclick="Terpilih(event, 'DoaHT.html')">Doa Hadiah (Tahlil)</a>
+  <a href="#" onclick="Terpilih(event, 'DoaSB.html')">Doa Surat Bismillah</a>
+  
+ </div>
+     
+     <a href="javascript:void(0);" onclick="toggleSubMenu(event, 'SubMenu4')">Dzikir & Doa
+ <span class="Tpanah">&#9654;</span>
+ </a>
+ <div id="SubMenu4" class="SubMenu2 Terpilih">
+ <a href="#" onclick="Terpilih(event, 'wiridan.html')">Dzikiran Sholat</a>
+ <a href="#" onclick="Terpilih(event, 'sunnah.html')">Sholat Tahajud</a>
+   <a href="#" onclick="Terpilih(event, 'hajat.html')">Shola Hajat</a>
+   <a href="#" onclick="Terpilih(event, 'istighotsah.html')">Doa Sholat Dhuha</a>
+ <a href="#" onclick="Terpilih(event, 'tarawih.html')">Sholat Tarawih Witir</a>
+ <a href="#" onclick="Terpilih(event, 'tobat.html')">Sholat Taubat</a>
+ <a href="#" onclick="Terpilih(event, 'tolakbala.html')">Sholat Tolak Bala</a>
+ <a href="#" onclick="Terpilih(event, 'tasbih.html')">Sholat Tasbih</a>
+ <a href="#" onclick="Terpilih(event, 'gerhana.html')">Sholat Gerhana</a>
+     <a href="#" onclick="Terpilih(event, 'istisqo.html')">Sholat Istisqo</a>
+  </div>
+     
+     <a href="javascript:void(0);" onclick="toggleSubMenu(event, 'SubMenu5')">Khutbah
+ <span class="Tpanah">&#9654;</span>
+ </a>
+ <div id="SubMenu5" class="SubMenu2 Terpilih">
+ <a href="#" onclick="Terpilih(event, 'khfitri.html')">Khutbah Idul Fitri</a>
+ <a href="#" onclick="Terpilih(event, 'khadha.html')">Khutbah Idul Adha</a>
+   <a href="#" onclick="Terpilih(event, 'khjumah.html')">Khutbah Jum'ah</a>
+   <a href="#" onclick="Terpilih(event, 'khnikah.html')">Khutbah Nikah</a>
+    <a href="#" onclick="Terpilih(event, 'khhaji.html')">Khutbah Haji</a>
+ <a href="#" onclick="Terpilih(event, 'khmayit.html')">Talqin Mayit</a>
+ </div>
+     
+    <a href="javascript:void(0);" onclick="toggleSubMenu(event, 'SubMenu6')">Doa Pilihan
+ <span class="Tpanah">&#9654;</span>
+ </a>
+ <div id="SubMenu6" class="SubMenu2 Terpilih">
+ <a href="#" onclick="Terpilih(event, 'Yarobbi.html')">Doa Tahunan</a>
+ <a href="#" onclick="Terpilih(event, 'Syeikh.html')">Doa Nisfu Sya'ban</a>
+   <a href="#" onclick="Terpilih(event, 'Haji.html')">Doa Romadhon</a>
+   <a href="#" onclick="Terpilih(event, 'Haji.html')">Doa Asyuro</a>
+ <a href="#" onclick="Terpilih(event, 'Haji.html')">Doa Kanzul Arsyi</a>
+ <a href="#" onclick="Terpilih(event, 'Haji.html')">Doa Akasyah</a>
+<a href="#" onclick="Terpilih(event, 'Haji.html')">Doa Haikal</a>
+<a href="#" onclick="Terpilih(event, 'Haji.html')">Doa Nurbuat</a>
+
+ </div> 
+     <a href="javascript:void(0);" onclick="toggleSubMenu(event, 'SubMenu7')">Sholawat Pilihan
+ <span class="Tpanah">&#9654;</span>
+ </a>
+ <div id="SubMenu7" class="SubMenu2 Terpilih">
+ <a href="#" onclick="Terpilih(event, 'shnariyah.html')">Sholawat Nariyah</a>
+ <a href="#" onclick="Terpilih(event, 'shmunziyah.html')">Sholawat Munziyah</a>
+   <a href="#" onclick="Terpilih(event, 'shmunfariza.html')">Sholawat Munfarizah</a>
+   <a href="#" onclick="Terpilih(event, 'sjjibril.html')">Sholawat Jibril</a>
+ <a href="#" onclick="Terpilih(event, 'sjsyifa.html')">Sholawat Syifa</a>
+ </div> 
+     
+     
+ <a href="#" onclick="Terpilih(event, 'takbiran.html')">Takbiran</a>
+ <a href="#" onclick="Terpilih(event, 'tasbih.html')">Tasbih Digital</a>
+ <a href="#" onclick="Terpilih(event, 'kalselamatan.html')">Hitung Hari Selamatan</a>
+ <a href="#" onclick="Terpilih(event, 'kalwaris.html')">Hitung Waris</a>
+ 
+ </div>
+
+ <!-- Konten Badan -->
+ <iframe id="Badan" src="Washol.html" class="Badan" style="pointer-events: auto;"></iframe>
+ 
+ <div id="Kecil" class="Mas1"></div>
+ 
+ <div id="Besar" class="Mas2"></div>
+ 
+ <div class="Kaki">
+  
+   <iframe id="iframe1" class ="Iframeku" src="Info.html" style="display: block;"></iframe>
+<iframe id="iframe2" src="https://hadiahan.blogspot.com/2024/11/marqueku.html" class ="Iframeku" style="display: none;"></iframe>
+  
+ </div>
+ 
+ 
+<script src="Js/SAPMenu.js"></script> 
+<script src="Js/S2XHHF.js"></script> 
+<script src="Js/SAModeGSA.js"></script>
+<script src="Js/SAClassGA.js"></script> 
+<script src="Js/SABKFont.js"></script> 
+
+</body>
+</html>
