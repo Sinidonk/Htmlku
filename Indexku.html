@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Halaman dengan Menu</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            overflow: hidden; /* Menonaktifkan scroll pada body */
+            height: 100vh;
+            background-color: green;
+        }
+
+        .Kepala, .Kaki {
+            position: fixed;
+            width: 98%;
+            left: 50%;
+            transform: translateX(-50%);
+            height: 30px;
+            background-color: green;
+            color: white;
+            text-align: center;
+            line-height: 30px;
+            border: 5px double yellow;
+            display: none; /* Tersembunyi saat awal */
+            z-index: 1000; /* Tetap di atas elemen lainnya */
+        }
+
+        .Kepala {
+            top: 0;
+            border-radius: 5px 5px 10px 10px;
+        }
+
+        .Kaki {
+            bottom: 0;
+            border-radius: 10px 10px 5px 5px;
+        }
+
+        .menu-toggle {
+            position: absolute;
+            top: 5px;
+            left: 5px;
+            cursor: pointer;
+            font-size: 20px;
+        }
+
+        .menu {
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            padding-top: 40px;
+            left: -200px;
+            width: 200px;
+            height: 100vh;
+            background-color: green;
+            border-right: 1px solid black;
+            transition: left 0.3s ease;
+            overflow-y: auto; /* Scroll hanya pada menu */
+            z-index: 999; /* Tetap di bawah Kepala tetapi di atas konten */
+            color: white;
+        }
+
+        .menu.open {
+            left: 0;
+        }
+
+        .menu ul {
+            list-style: none;
+            padding: 5px;
+            margin: 3px;
+            border: 1px solid yellow;
+            border-radius: 5px 15px 15px 5px;
+            gap: 3px;
+        }
+
+        .menu li {
+            padding: 10px;
+            border: 1px solid white;
+            cursor: pointer;
+            border-radius: 5px 15px 15px 5px;
+        }
+
+        .menu li:hover {
+            background-color: blue;
+            color: yellow;
+            font-weight: bold;
+        }
+
+        .submenu {
+            display: none;
+            padding-left: 5px;
+        }
+
+        .submenu li {
+            border: 1px solid white;
+            border-radius: 5px 15px 15px 5px;
+        }
+
+        .submenu li:hover {
+            background-color: green;
+            color: yellow;
+            font-weight: bold;
+        }
+
+        .submenu.open {
+            display: block;
+        }
+
+        .Badan {
+            position: fixed; /* Tetap di tempatnya, tidak bergeser */
+            margin: 0;
+            top: 0px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 98%;
+            height: 98vh;
+            border: 5px double blue;
+            border-radius: 15px;
+            z-index: 500; /* Tetap di bawah Kepala dan menu */
+            transition: margin-left 0.3s ease;
+            background-color: white;
+        }
+
+        .Badan.menu-open {
+            margin-left: 200px; /* Bergeser saat menu terbuka */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="Kepala">
+        <div class="menu-toggle" onclick="TombMenu()">☰</div>Kepala
+    </div>
+
+    <div class="menu">
+        <ul>
+            <li onclick="loadcontent('default.html')">Pilihan 1</li>
+            <li onclick="loadcontent('page2.html')">Pilihan 2</li>
+            <li onclick="toggleSubmenu(this, 'submenu1')">Pilihan 3</li>
+            <ul class="submenu" id="submenu1">
+                <li onclick="loadcontent('default.html')">Pilihan A</li>
+                <li>Pilihan B</li>
+                <li>Pilihan C</li>
+            </ul>
+            <li onclick="toggleSubmenu(this, 'submenu2')">Pilihan 4</li>
+            <ul class="submenu" id="submenu2">
+                <li>Pilihan A</li>
+                <li>Pilihan B</li>
+            </ul>
+            <li onclick="loadcontent('page5.html')">Pilihan 5</li>
+            <li onclick="loadcontent('page6.html')">Pilihan 6</li>
+        </ul>
+    </div>
+
+    <!-- Menggunakan iframe dengan id dan class "Badan" -->
+    <iframe id="Badan" class="Badan" src="default.html"></iframe>
+
+    <div class="Kaki">Kaki</div>
+
+    <script>
+        const menuToggle = document.querySelector('.menu-toggle');
+        const menu = document.querySelector('.menu');
+        const Kepala = document.querySelector('.Kepala');
+        const Kaki = document.querySelector('.Kaki');
+        const iframe = document.getElementById('Badan');
+
+        function TombMenu() {
+            menu.classList.toggle('open');
+            iframe.classList.toggle('menu-open');
+        }
+
+        function toggleSubmenu(el, submenuId) {
+            const allSubmenus = document.querySelectorAll('.submenu');
+            allSubmenus.forEach(submenu => {
+                if (submenu.id !== submenuId) {
+                    submenu.classList.remove('open');
+                }
+            });
+            const submenu = document.getElementById(submenuId);
+            submenu.classList.toggle('open');
+        }
+
+        function loadcontent(page) {
+            iframe.src = page;
+            closeMenu();
+        }
+
+        function closeMenu() {
+            menu.classList.remove('open');
+            iframe.classList.remove('menu-open');
+        }
+
+        function showKepalaKaki() {
+            Kepala.style.display = 'block';
+            Kaki.style.display = 'block';
+        }
+
+        function hideKepalaKaki() {
+            Kepala.style.display = 'none';
+            Kaki.style.display = 'none';
+        }
+
+        document.addEventListener('dblclick', showKepalaKaki);
+
+        iframe.addEventListener('load', () => {
+            iframe.contentWindow.document.addEventListener('dblclick', showKepalaKaki);
+            iframe.contentWindow.document.addEventListener('scroll', hideKepalaKaki);
+        });
+
+        document.addEventListener('scroll', hideKepalaKaki);
+
+        document.addEventListener('click', (e) => {
+            if (!menu.contains(e.target) && !e.target.classList.contains('menu-toggle') && !e.target.closest('.menu') && !e.target.closest('#Badan')) {
+                closeMenu();
+            }
+        });
+
+        window.addEventListener("message", function(event) {
+            if (event.data === "closeMenu") {
+                closeMenu();
+            }
+        });
+    </script>
+
+</body>
+</html>
