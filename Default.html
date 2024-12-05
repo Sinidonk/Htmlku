@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Halaman Default</title>
+</head>
+<body>
+
+    
+    <div class="hal">
+        <h1 id="hal">Selamat Datang di Halaman Default</h1>
+        <p>Halaman ini adalah contoh untuk memastikan bahwa semua script dan interaksi dengan header/footer berfungsi dengan baik.</p>
+        <p>Cobalah klik dua kali di area kosong untuk menampilkan header dan footer, lalu gulir halaman untuk menyembunyikannya kembali.</p>
+      <h1 id="hal">Selamat Datang di Halaman Default</h1>
+        <p>Halaman ini adalah contoh untuk memastikan bahwa semua script dan interaksi dengan header/footer berfungsi dengan baik.</p>
+        <p>Cobalah klik dua kali di area kosong untuk menampilkan header dan footer, lalu gulir halaman untuk menyembunyikannya kembali.</p>
+      <h1 id="hal">Selamat Datang di Halaman Default</h1>
+        <p>Halaman ini adalah contoh untuk memastikan bahwa semua script dan interaksi dengan header/footer berfungsi dengan baik.</p>
+        <p>Cobalah klik dua kali di area kosong untuk menampilkan header dan footer, lalu gulir halaman untuk menyembunyikannya kembali.</p>
+      
+    </div>
+
+    <script>
+        // Kirim pesan ke halaman utama (parent window) untuk menutup menu saat ada interaksi
+        document.addEventListener('click', function() {
+            parent.postMessage("closeMenu", "*"); // Mengirim pesan ke halaman utama
+        });
+    </script>
+
+</body>
+</html>
