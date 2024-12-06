@@ -1,0 +1,18 @@
+<style>@keyframes marquee {0% {transform: translateX(100%);}
+ 100% {transform: translateX(-100%);}}
+ </style>
+ <div style="width: 100%;noverflow: hidden; ;white-space: nowrap; position: fixed; top: 0; left: 50%; transform: translateX(-50%);z-index: 1000;">
+<div style="display: inline-block; padding-left: 100%; animation: marquee 7s linear infinite;"id="marqueeText">
+ Selamat Datang Sahabatku
+ </div></div>
+   
+   <script>const messages = [
+ "Selamat Datang Sahabatku",
+ "Semoga Para Sahabat Semua Sehat Selalu",
+ "Selamat Bekerja Dan Beraktivitas",
+ "Selamat Menempuh Perjuangan Hidup",
+ "Semoga Tuhan Selalu Melindungi Sahabat Semua."
+ ];let currentIndex = 0; function changeMarqueeText() {
+ currentIndex = (currentIndex + 1) % messages.length;document.getElementById('marqueeText').textContent = messages[currentIndex];
+ } setInterval(changeMarqueeText, 5000);
+ </script>
