@@ -3,11 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <title>Menu List</title>
-  <link rel="stylesheet" href="Css/StyleKuB2.css">
-  <link rel="stylesheet" href="https://sinidonk.github.io/Cssku/StylekuB2.css">
+  <link rel="stylesheet" href="Cssku/Styleku2A.css">
+ <link rel="stylesheet" href="https://sinidonk.github.io/Cssku/Styleku2A.css">
+  
 </head>
 <body>
-<ul>
+<ul class="Menu">
  
 <li class="Menuli" onclick= "parent.loadcontent('Fatihah.html')">📚 Asmaul Husna</li>
  
@@ -62,35 +63,43 @@
 <li class="Menuli" onclick= "parent.loadcontent('page6.html')">📚 6</li>
  </ul>
  <script>
-  document.querySelectorAll('.Menuli.Hsm').forEach(item => {
-    item.addEventListener('click', (e) => {
-        e.stopPropagation(); // Mencegah event bubbling
+  // Menangani toggle submenu
+document.querySelectorAll('.Menuli.Hsm').forEach(menuItem => {
+    menuItem.addEventListener('click', (e) => {
+        e.stopPropagation(); // Mencegah klik keluar bubble ke elemen lain
 
-        // Tutup semua dropdown lain, lalu toggle item yang diklik
-        document.querySelectorAll('.Menuli.Hsm').forEach(menu => {
-            const SubMenu = menu.querySelector('.SubMenu');
-            menu.classList.toggle('open', menu === item && !menu.classList.contains('open'));
-            if (SubMenu) SubMenu.classList.toggle('open', menu === item && !SubMenu.classList.contains('open'));
+        // Tutup semua dropdown lain
+        document.querySelectorAll('.Menuli.Hsm').forEach(item => {
+            if (item !== menuItem) {
+                item.classList.remove('open');
+                const submenu = item.querySelector('.SubMenu');
+                if (submenu) submenu.classList.remove('open');
+            }
         });
+
+        // Toggle dropdown untuk menu yang diklik
+        menuItem.classList.toggle('open');
+        const submenu = menuItem.querySelector('.SubMenu');
+        if (submenu) submenu.classList.toggle('open');
     });
 });
 
-// Tutup semua dropdown saat area luar iframe diklik
+// Tutup semua submenu saat klik di luar menu
 document.addEventListener('click', () => {
-    document.querySelectorAll('.Menuli.Hsm').forEach(menu => {
-        menu.classList.remove('open');
-        const SubMenu = menu.querySelector('.SubMenu');
-        if (SubMenu) SubMenu.classList.remove('open');
+    document.querySelectorAll('.Menuli.Hsm').forEach(item => {
+        item.classList.remove('open');
+        const submenu = item.querySelector('.SubMenu');
+        if (submenu) submenu.classList.remove('open');
     });
 });
 
-// Menerima pesan dari parent untuk Menutup semua dropdown
+// Mendengar pesan dari parent untuk menutup dropdown
 window.addEventListener('message', (event) => {
     if (event.data === 'closeDropdown') {
-        document.querySelectorAll('.Menuli.Hsm').forEach(menu => {
-            menu.classList.remove('open');
-            const SubMenu = menu.querySelector('.SubMenu');
-            if (SubMenu) SubMenu.classList.remove('open');
+        document.querySelectorAll('.Menuli.Hsm').forEach(item => {
+            item.classList.remove('open');
+            const submenu = item.querySelector('.SubMenu');
+            if (submenu) submenu.classList.remove('open');
         });
     }
 });
