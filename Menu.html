@@ -63,46 +63,13 @@
 <li class="Menuli" onclick= "parent.loadcontent('page6.html')">📚 6</li>
  </ul>
  <script>
-  // Menangani toggle submenu
-document.querySelectorAll('.Menuli.Hsm').forEach(menuItem => {
-    menuItem.addEventListener('click', (e) => {
-        e.stopPropagation(); // Mencegah klik keluar bubble ke elemen lain
+  // Fungsi untuk mengirimkan pesan ke file utama
+function sendMessageToMain() {
+    window.parent.postMessage('toggleMenu', window.location.origin); // Kirim pesan ke file utama
+}
 
-        // Tutup semua dropdown lain
-        document.querySelectorAll('.Menuli.Hsm').forEach(item => {
-            if (item !== menuItem) {
-                item.classList.remove('open');
-                const submenu = item.querySelector('.SubMenu');
-                if (submenu) submenu.classList.remove('open');
-            }
-        });
-
-        // Toggle dropdown untuk menu yang diklik
-        menuItem.classList.toggle('open');
-        const submenu = menuItem.querySelector('.SubMenu');
-        if (submenu) submenu.classList.toggle('open');
-    });
-});
-
-// Tutup semua submenu saat klik di luar menu
-document.addEventListener('click', () => {
-    document.querySelectorAll('.Menuli.Hsm').forEach(item => {
-        item.classList.remove('open');
-        const submenu = item.querySelector('.SubMenu');
-        if (submenu) submenu.classList.remove('open');
-    });
-});
-
-// Mendengar pesan dari parent untuk menutup dropdown
-window.addEventListener('message', (event) => {
-    if (event.data === 'closeDropdown') {
-        document.querySelectorAll('.Menuli.Hsm').forEach(item => {
-            item.classList.remove('open');
-            const submenu = item.querySelector('.SubMenu');
-            if (submenu) submenu.classList.remove('open');
-        });
-    }
-});
+// Contoh penggunaan: Kirim pesan saat elemen tertentu diklik
+document.querySelector('.someElement').addEventListener('click', sendMessageToMain);
   </script>
 </body>
 </html>
