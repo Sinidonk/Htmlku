@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Menu List</title>
+  <link rel="stylesheet" href="Cssku/Styleku2B.css">
+ <link rel="stylesheet" href="https://sinidonk.github.io/Cssku/Styleku2B.css">
+  
+</head>
+<body>
+<ul class="Menu">
+ 
+<li class="Menuli" onclick= "parent.loadcontent('Fatihah.html')">📚 Asmaul Husna</li>
+ 
+<li class="Menuli" onclick= "parent.loadcontent('Yasin.html')">📚 Al-Quran & Tafsir</li>
+ <li class="Menuli Hsm" onclick="toggleSubMenu(this, 'SubMenu1')">📚 Surat Pilihan</li>
+ <ul class="SubMenu" id="SubMenu1">
+ <li onclick="parent.loadcontent('yasin.html')">📚Surat Yasin</li>
+ <li onclick="parent.loadcontent('Default.html')">📚B</li>
+ <li onclick="parent.loadcontent('Default.html')">📚C</li>
+ <li onclick="parent.loadcontent('Default.html')">📚D</li>
+ <li onclick="parent.loadcontent('Default.html')">📚E</li>
+ <li onclick="parent.loadcontent('Default.html')">📚F</li>
+ </ul>
+  <li class="Menuli Hsm" onclick="toggleSubMenu(this, 'SubMenu2')">📚 Hadiah (Tahlil)</li>
+ <ul class="SubMenu" id="SubMenu2">
+ <li onclick="parent.loadcontent('Default.html')">📚A</li>
+ <li onclick="parent.loadcontent('Default.html')">📚B</li>
+ <li onclick="parent.loadcontent('Default.html')">📚C</li>
+ <li onclick="parent.loadcontent('Default.html')">📚D</li>
+ <li onclick="parent.loadcontent('Default.html')">📚E</li>
+ <li onclick="parent.loadcontent('Default.html')">📚F</li>
+ </ul>
+ <li class="Menuli Hsm" onclick="toggleSubMenu(this, 'SubMenu3')">📚 Dzikir & Doa</li>
+ <ul class="SubMenu" id="SubMenu3">
+ <li onclick="parent.loadcontent('Default.html')">📚A</li>
+ <li onclick="parent.loadcontent('Default.html')">📚B</li>
+ <li onclick="parent.loadcontent('Default.html')">📚C</li>
+ <li onclick="parent.loadcontent('Default.html')">📚D</li>
+ <li onclick="parent.loadcontent('Default.html')">📚E</li>
+ <li onclick="parent.loadcontent('Default.html')">📚F</li>
+ </ul>
+ <li class="Menuli Hsm" onclick="toggleSubMenu(this, 'SubMenu4')">📚 Khutbah</li>
+ <ul class="SubMenu" id="SubMenu4">
+ <li onclick="parent.loadcontent('Default.html')">📚A</li>
+ <li onclick="parent.loadcontent('Default.html')">📚B</li>
+ <li onclick="parent.loadcontent('Default.html')">📚C</li>
+ <li onclick="parent.loadcontent('Default.html')">📚D</li>
+ <li onclick="parent.loadcontent('Default.html')">📚E</li>
+ <li onclick="parent.loadcontent('Default.html')">📚F</li>
+ </ul>
+  <li class="Menuli Hsm" onclick="toggleSubMenu(this, 'SubMenu5')">📚 Doa Pilihan</li>
+ <ul class="SubMenu" id="SubMenu5">
+ <li onclick="parent.loadcontent('Default.html')">📚A</li>
+ <li onclick="parent.loadcontent('Default.html')">📚B</li>
+ <li onclick="parent.loadcontent('Default.html')">📚C</li>
+ <li onclick="parent.loadcontent('Default.html')">📚D</li>
+ <li onclick="parent.loadcontent('Default.html')">📚E</li>
+ <li onclick="parent.loadcontent('Default.html')">📚F</li>
+ </ul>
+ 
+<li class="Menuli" onclick= "parent.loadcontent('page5.html')">📚 5</li>
+<li class="Menuli" onclick= "parent.loadcontent('page6.html')">📚 6</li>
+ </ul>
+ <script>
+  // Menangani toggle submenu
+document.querySelectorAll('.Menuli.Hsm').forEach(menuItem => {
+    menuItem.addEventListener('click', (e) => {
+        e.stopPropagation(); // Mencegah klik keluar bubble ke elemen lain
+
+        // Tutup semua dropdown lain
+        document.querySelectorAll('.Menuli.Hsm').forEach(item => {
+            if (item !== menuItem) {
+                item.classList.remove('open');
+                const submenu = item.querySelector('.SubMenu');
+                if (submenu) submenu.classList.remove('open');
+            }
+        });
+
+        // Toggle dropdown untuk menu yang diklik
+        menuItem.classList.toggle('open');
+        const submenu = menuItem.querySelector('.SubMenu');
+        if (submenu) submenu.classList.toggle('open');
+    });
+});
+
+// Tutup semua submenu saat klik di luar menu
+document.addEventListener('click', () => {
+    document.querySelectorAll('.Menuli.Hsm').forEach(item => {
+        item.classList.remove('open');
+        const submenu = item.querySelector('.SubMenu');
+        if (submenu) submenu.classList.remove('open');
+    });
+});
+
+// Mendengar pesan dari parent untuk menutup dropdown
+window.addEventListener('message', (event) => {
+    if (event.data === 'closeDropdown') {
+        document.querySelectorAll('.Menuli.Hsm').forEach(item => {
+            item.classList.remove('open');
+            const submenu = item.querySelector('.SubMenu');
+            if (submenu) submenu.classList.remove('open');
+        });
+    }
+});
+  </script>
+</body>
+</html>
