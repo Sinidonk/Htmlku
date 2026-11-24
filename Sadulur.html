@@ -4,24 +4,25 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#0E2F2A">
-<title>Sakaum</title>
+<title>sadudulur</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="modulepreload" href="https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js">
 <link rel="modulepreload" href="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js">
+<link rel="modulepreload" href="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js">
 <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Figtree:wght@400;500;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
 <noscript><link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Figtree:wght@400;500;700&display=swap" rel="stylesheet"></noscript>
 <style>
 :root{--ink:#0E2F2A;--leaf:#1E5B4C;--brass:#B5862B;--mist:#EDF1EC;--card:#fff;--line:#D4DDD5;--rose:#8C3B3B;--tx:#17302b;--mut:#5f7771;color-scheme:light}
 @media(prefers-color-scheme:dark){:root{--mist:#0B1B18;--card:#12302A;--line:#25483F;--tx:#E6EFEA;--mut:#93ADA5;--ink:#06120F;color-scheme:dark}}
 *{box-sizing:border-box}html,body{margin:0}
-body{font:16px/1.5 Figtree,system-ui,sans-serif;background:var(--mist);color:var(--tx);min-height:100vh;padding:calc(10px + env(safe-area-inset-top,0px)) 10px calc(64px + env(safe-area-inset-bottom,0px))}
-y
-s
+body{font:16px/1.5 Figtree,system-ui,sans-serif;background:var(--mist);color:var(--tx);min-height:100vh;padding:calc(6px + env(safe-area-inset-top,0px)) 10px calc(64px + env(safe-area-inset-bottom,0px))}
+body.mo{padding-bottom:calc(min(46vh,380px) + 100px)}
+body::before{content:"";position:fixed;inset:0;z-index:-1;background:var(--mist) url(https://sinidonk.github.io/Gbrku/Latar.jpg) center/cover no-repeat}
 h1,h2,h3{font-family:Amiri,serif;margin:0}
 /* Jam lingkaran */
-h.clk{display:flex;flex-direction:column;align-items:center;margin:18px 0 8px}
-su6
+.clk{display:flex;flex-direction:column;align-items:center;margin:18px 0 8px}
+.cf{position:relative;width:min(78vw,320px);aspect-ratio:1;border-radius:50%;background:radial-gradient(circle at 50% 35%,#134238,#0A211D 75%);border:3px solid var(--brass);box-shadow:0 0 0 6px rgba(14,47,42,.85),0 0 0 8px rgba(181,134,43,.7),0 0 28px rgba(255,216,61,.35),0 10px 26px rgba(0,0,0,.5)}
 .cf .lg{position:absolute;left:50%;top:50%;width:46%;height:46%;transform:translate(-50%,-50%);object-fit:contain;opacity:.92;border-radius:50%}
 .cf svg{position:absolute;inset:0;width:100%;height:100%}
 .cf .tk{stroke:#E8D9A8;stroke-width:1.2}.cf .tk.h{stroke:#FFD83D;stroke-width:2.6}
@@ -31,12 +32,12 @@ su6
 .cdig{margin-top:14px;padding:4px 18px;border-radius:99px;background:rgba(14,47,42,.88);border:1px solid var(--brass);color:#FFD83D;font:700 1.35rem Amiri,serif;letter-spacing:2px}
 .cdat{margin-top:4px;padding:2px 12px;border-radius:99px;background:rgba(14,47,42,.75);color:#fff;font-size:.78rem}
 button,input,select{font:inherit;color:inherit}
-header{max-width:860px;margin:0 auto 10px;background:var(--ink);color:#fff;display:flex;align-items:center;justify-content:center;padding:14px 14px 12px;border-radius:24px;border:1px solid rgba(181,134,43,.55);border-bottom:3px solid var(--brass);box-shadow:0 6px 18px rgba(14,47,42,.18)}
-header .ttl{text-align:center;line-height:1.1;font-family:Amiri,serif}
+header{max-width:none;margin:0 -10px 6px;background:var(--ink);color:#fff;display:flex;align-items:center;justify-content:center;padding:5px;border-radius:18px;border:1px solid rgba(181,134,43,.55);border-bottom:3px solid var(--brass);box-shadow:0 6px 18px rgba(14,47,42,.18)}
+header .ttl{text-align:center;line-height:1.02;border:1px solid rgba(255,216,61,.7);border-radius:14px;padding:4px 18px 5px;width:100%;box-shadow:inset 0 0 10px rgba(255,216,61,.18);font-family:Amiri,serif}
 header .ttl div{font-weight:700;letter-spacing:1px}
-header .ttl .l1{font-size:clamp(1.5rem,9vw,2.5rem);color:#FFD83D;text-shadow:-1px -1px 0 #0E2F2A,1px -1px 0 #0E2F2A,-1px 1px 0 #0E2F2A,1px 1px 0 #0E2F2A}
-header .ttl .l2{font-size:clamp(1.1rem,6.4vw,1.95rem);color:#FF3B30;text-shadow:-1px -1px 0 #0E2F2A,1px -1px 0 #0E2F2A,-1px 1px 0 #0E2F2A,1px 1px 0 #0E2F2A}
-header .ttl .l3{font-size:clamp(1.05rem,6.1vw,1.85rem);color:#7FD8FF;text-shadow:-1px -1px 0 #0E2F2A,1px -1px 0 #0E2F2A,-1px 1px 0 #0E2F2A,1px 1px 0 #0E2F2A}
+header .ttl .l1{font-size:clamp(1.05rem,6vw,1.6rem);color:#FFD83D;text-shadow:-1px -1px 0 #0E2F2A,1px -1px 0 #0E2F2A,-1px 1px 0 #0E2F2A,1px 1px 0 #0E2F2A}
+header .ttl .l2{font-size:clamp(.8rem,4.4vw,1.25rem);color:#FF3B30;text-shadow:-1px -1px 0 #0E2F2A,1px -1px 0 #0E2F2A,-1px 1px 0 #0E2F2A,1px 1px 0 #0E2F2A}
+header .ttl .l3{font-size:clamp(.78rem,4.2vw,1.2rem);color:#7FD8FF;text-shadow:-1px -1px 0 #0E2F2A,1px -1px 0 #0E2F2A,-1px 1px 0 #0E2F2A,1px 1px 0 #0E2F2A}
 .hero{background:var(--ink) repeating-conic-gradient(from 45deg at 50% 50%,#ffffff08 0 12.5%,transparent 0 25%) 0 0/46px 46px;color:#fff;text-align:center;padding:6px 8px;border-bottom:3px solid var(--brass)}
 .hero h1{font-size:clamp(.85rem,3.9vw,1.4rem);line-height:1.2;margin:0}
 .hero .y{color:#FFD83D}
@@ -52,23 +53,23 @@ header .ttl .l3{font-size:clamp(1.05rem,6.1vw,1.85rem);color:#7FD8FF;text-shadow
 .btn.c1{background:#2E7DD1}.btn.c2{background:#D9435A}.btn.c3{background:#E08A00}.btn.c4{background:#1E9C8A}.btn.c5{background:#8E4EC6}
 .btn[disabled]{opacity:.4;cursor:default}
 .mut{color:var(--mut)}
-.two{display:grid;grid-template-columns:36px 1fr 1fr 36px;gap:6px;align-items:center}
+.two{display:grid;grid-template-columns:30px 1fr 1fr 30px;gap:5px;align-items:center}
 /* Kotak cari: bingkai luar digelapkan, isi menyala */
-.fb{background:linear-gradient(160deg,#061512,#0E2F2A 60%,#134238);border:1px solid var(--brass);border-radius:20px;padding:8px;box-shadow:0 0 0 1px rgba(255,216,61,.25),0 0 22px rgba(255,216,61,.28),0 6px 16px rgba(0,0,0,.35);margin-bottom:10px}
+.fb{background:linear-gradient(160deg,#061512,#0E2F2A 60%,#134238);border:1px solid var(--brass);border-radius:16px;padding:5px;box-shadow:0 0 0 1px rgba(255,216,61,.25),0 0 22px rgba(255,216,61,.28),0 6px 16px rgba(0,0,0,.35);margin-bottom:6px}
 .fb .res{margin-top:6px}
 .fb .in{background:#F7FBF4;color:#000;border-color:#FFD83D;box-shadow:0 0 10px rgba(255,216,61,.35)}
 .fb .in::placeholder{color:#222;opacity:1}
 .fb select.in option{color:#000;background:#fff}
-.fb .btn.ib{background:#F7FBF4;border-color:#FFD83D;box-shadow:0 0 10px rgba(255,216,61,.35)}
+.fb .btn.ib{background:linear-gradient(180deg,#FFFFFF,#DDE8D8);border-color:#FFD83D;box-shadow:0 0 10px rgba(255,216,61,.35),0 2px 0 rgba(0,0,0,.35),inset 0 1px 0 #fff}
 .two .in,.two form{min-width:0;margin:0}
 .two form .in{margin:0}
-.two select.in{height:36px;padding:0 6px;font-size:.9rem}.two form .in{height:36px;padding:0 12px}
+.two select.in{height:30px;padding:0 5px;font-size:.8rem}.two form .in{height:30px;padding:0 10px;font-size:.8rem}
 .tree{margin-top:8px}
-.th{background:linear-gradient(135deg,#0E2F2A,#1E5B4C);color:#fff;border-radius:20px;border-bottom:3px solid var(--brass);padding:8px 10px;margin:0 0 8px;box-shadow:0 3px 10px #0003;display:flex;align-items:center;justify-content:space-between;gap:8px}
-.th .btn{flex:none;padding:2px 9px;font-size:.85rem;border-radius:8px}
+.th{background:linear-gradient(135deg,#0E2F2A,#1E5B4C);color:#fff;border-radius:16px;border-bottom:2px solid var(--brass);padding:4px 8px;margin:0 0 6px;box-shadow:0 3px 10px #0003;display:flex;align-items:center;justify-content:space-between;gap:8px}
+.th .btn{flex:none;padding:1px 8px;font-size:.75rem;border-radius:7px}
 .th .btn.alt{background:#ffffff22;color:#fff;border:1px solid #ffffff44}
-.th .tt{margin:0;flex:1;min-width:0;line-height:1.15;font-size:1.05rem;text-align:center}
-.th .tt span{display:block;font-size:1.05em;color:#FFD83D;word-break:break-word}
+.th .tt{margin:0;flex:1;min-width:0;line-height:1.1;font-size:.85rem;text-align:center}
+.th .tt span{display:block;font-size:1em;color:#FFD83D;word-break:break-word}
 .kscroll{background:var(--card);border:1px solid rgba(181,134,43,.45);border-radius:22px;padding:12px 10px 8px;overflow-y:auto;overscroll-behavior:contain;box-shadow:inset 0 0 0 3px var(--card),inset 0 0 0 4px rgba(181,134,43,.25),0 6px 18px rgba(14,47,42,.10)}
 .hint{text-align:center;color:var(--mut);font-size:.8rem;margin:4px 0 8px}
 .cp{display:flex;align-items:flex-start;justify-content:center;gap:6px}
@@ -141,18 +142,60 @@ details.more summary{cursor:pointer;color:var(--mut);padding:6px 0}
 #toast{position:fixed;left:50%;top:calc(14px + env(safe-area-inset-top,0px));transform:translateX(-50%);background:var(--ink);color:#fff;padding:8px 16px;border-radius:99px;z-index:80;display:none;max-width:90vw;text-align:center;border:1px solid var(--brass);font-size:.9rem}
 @keyframes fl{0%,65%{box-shadow:0 0 0 5px #FFD83D}100%{box-shadow:0 0 0 0 transparent}}
 .new{animation:fl 3.2s}
-.btn.ib{width:36px;height:36px;padding:0;border-radius:11px;display:flex;align-items:center;justify-content:center;background:transparent;border:1px solid var(--line)}
-.btn.ib svg{display:block}
+.btn.ib{width:30px;height:30px;padding:0;border-radius:9px;display:flex;align-items:center;justify-content:center;background:transparent;border:1px solid var(--line)}
+.btn.ib svg{display:block;width:24px;height:24px;filter:drop-shadow(0 1.5px 1px rgba(0,0,0,.45))}
 .btn.ib.buat{color:#2FA084}.btn.ib:active{background:var(--mist)}
 .btn.ib.edit{color:#B5862B}
+.two.w{grid-template-columns:30px 1fr 30px}
+.wl{max-width:420px;margin:18px auto 0;text-align:center;background:linear-gradient(160deg,#061512,#0E2F2A 60%,#134238);border:1px solid var(--brass);border-radius:22px;padding:16px 14px 18px;box-shadow:0 0 22px rgba(255,216,61,.28),0 6px 16px rgba(0,0,0,.35);color:#fff}
+.wl h2{color:#FFD83D;font-size:1.4rem;margin-bottom:4px}
+.wl p{margin:0 0 12px;font-size:.85rem;opacity:.85}
+.wl .btn{width:100%;margin-top:8px;padding:14px;font-size:1.05rem;font-weight:700}
+.rl{display:flex;justify-content:center;align-items:center;gap:8px;font-size:.72rem;margin:0 0 5px;color:var(--tx)}
+.rl b{color:var(--brass)}
+.rl button{background:none;border:1px solid var(--line);border-radius:99px;padding:1px 10px;font-size:.78rem;cursor:pointer;background:var(--card)}
+.gt{max-width:340px;margin:4px auto 0;text-align:center;background:linear-gradient(160deg,#061512,#0E2F2A 60%,#134238);border:1px solid var(--brass);border-radius:20px;padding:12px;color:#fff;box-shadow:0 0 22px rgba(255,216,61,.28),0 6px 16px rgba(0,0,0,.35)}
+.gt h2{color:#FFD83D;font-size:.95rem;margin:0;white-space:nowrap}
+.gr{display:flex;align-items:center;gap:8px;background:linear-gradient(160deg,#061512,#134238);border:1px solid var(--brass);border-radius:16px;padding:6px 8px;box-shadow:0 0 0 1px rgba(255,216,61,.25),0 0 14px rgba(255,216,61,.3)}.gr select.in{flex:1;min-width:0;height:30px;padding:0 8px;font-size:.85rem;border-radius:10px;border-color:#FFD83D;box-shadow:0 0 8px rgba(255,216,61,.35)}.gt select.in option{color:#000;background:#fff}
+.gt form{margin-top:8px;display:flex;flex-direction:column;gap:4px}
+.gt .in{background:#F7FBF4;color:#000;border-color:#FFD83D;margin:0}
+.gt .btn{margin-top:2px}
+.tb{display:flex;gap:6px;flex-wrap:nowrap}
+.tb button{flex:1 1 0;min-width:0;padding:3px 8px;font-size:.76rem;font-weight:700;border-radius:99px;border:1px solid var(--brass);background:transparent;color:#FFD83D;cursor:pointer;white-space:nowrap}
+.tb button.on{background:#FFD83D;color:#000}
+.rb{max-width:340px;margin:0 auto 5px}
+.rb button{background:var(--card);color:var(--tx)}
+.rb button.on{background:var(--ink);color:#FFD83D}
+.rb button.x{flex:0 0 auto;background:#E5484D;border-color:#E5484D;color:#fff}
+.pf{max-width:420px;margin:0 auto;background:var(--card);border:1px solid var(--brass);border-radius:20px;padding:14px}
+.pf h2{color:var(--brass);font-size:1.2rem;margin:0 0 4px}
+.pf label{display:block;font-size:.76rem;font-weight:700;color:#2FA084;margin-top:8px}
+.pf .btn{margin-top:12px;width:100%}
+.pw{position:relative}
+.pw .in{padding-right:42px}
+.pw .eye{position:absolute;right:6px;top:50%;transform:translateY(-50%);background:none;border:0;padding:5px;color:var(--mut);cursor:pointer;display:flex}
+.gt .pw .eye{color:#333}
+#modal .pw .in{padding-right:40px}
+.ck{display:flex;align-items:center;justify-content:center;gap:6px;font-size:.85rem;margin:4px 0;cursor:pointer}
+.ck input{width:18px;height:18px;accent-color:#FFD83D}
+html,body{height:100%}
+body{height:100vh;height:100dvh;min-height:0;overflow:hidden;display:flex;flex-direction:column}
+header{flex:none}
+#app{flex:1 1 auto;min-height:0;display:flex;flex-direction:column}
+#app>.wrap{flex:1 1 auto;min-height:0;width:100%;padding-bottom:0;display:flex;flex-direction:column;overflow-y:auto;overscroll-behavior:contain}
+#app>.wrap>*{flex:none}
+#app>.wrap>.tree{flex:1 1 auto;min-height:0;display:flex;flex-direction:column;margin-top:0}
+.tree>*{flex:none}
+.tree>.kscroll{flex:1 1 auto;min-height:0}
+body.nb:not(.mo){padding-bottom:calc(10px + env(safe-area-inset-bottom,0px))}
 @media(prefers-reduced-motion:reduce){*{transition:none!important}}
 </style>
 </head>
 <body>
 <header>
   <div class="ttl">
-    <div class="l1">SILSILAH</div>
-    <div class="l2">KELUARGA BESAR</div>
+    <div class="l1">SELAMAT DATANG</div>
+    <div class="l2">DI KELUARGA BESAR</div>
     <div class="l3">KAUM HUBUSSALAM</div>
   </div>
 </header>
@@ -174,7 +217,7 @@ const LS='saduduluran_data',LS_DEV='saduduluran_dev';
 const $=s=>document.querySelector(s);
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const nid=()=>'x'+Date.now().toString(36)+Math.random().toString(36).slice(2,6);
-let S={persons:{}},V={pid:null,si:0},db=null,fx=null;
+let S={persons:{}},V={pid:null,si:0,role:null,tab:'tree'},db=null,fx=null,au=null;
 const A={},F={};
 const me=()=>{let i=localStorage.getItem(LS_DEV);if(!i){i=nid();localStorage.setItem(LS_DEV,i)}return i};
 
@@ -211,7 +254,7 @@ const isDiv=(a,b)=>!!(a&&b&&((a.div||[]).includes(b.id)||(b.div||[]).includes(a.
 const mar=(a,b)=>b?`<div class="mr">${isDiv(a,b)?DIV:WED}</div>`:'';
 const al=p=>p.dead?(p.gender=='P'?'Almh. ':'Alm. '):'';
 const nm=p=>al(p)+esc(p.name);
-const fam=p=>{const f=P(p.fatherId),m=P(p.motherId);return f?(p.gender=='P'?'binti ':'bin ')+f.name:m?'dari '+m.name:p.elder?'Kaum':(p.gender=='P'?'Perempuan':'Laki-laki')};
+const fam=p=>{const f=P(p.fatherId),m=P(p.motherId);return f?(p.gender=='P'?'binti ':'bin ')+f.name:m?'dari '+m.name:p.elder?'Sesepuh':(p.gender=='P'?'Perempuan':'Laki-laki')};
 const hits=v=>{v=v.trim().toLowerCase();return v?Object.values(S.persons).filter(p=>p.name.toLowerCase().includes(v)):[]};
 const TI=()=>V.tg||V.pid,T=()=>P(TI());
 function age(p){if(!p.birth)return'';const b=new Date(p.birth),n=new Date();let a=n.getFullYear()-b.getFullYear(),m=n.getMonth()-b.getMonth();if(m<0||(m==0&&n.getDate()<b.getDate()))a--;return a>=0?a+' tahun':''}
@@ -226,6 +269,16 @@ function notes(p,s){
   });
   return h;
 }
+
+/* ===== HAK AKSES ===== */
+const MASTER='sinidonk@gmail.com',ALIAS='@sesepuh.local';
+const isM=()=>V.role=='s'&&(V.user?.email||'').toLowerCase()==MASTER;
+const own=p=>V.role=='s'&&!!p.uid&&p.uid==V.user?.uid;
+const isAd=()=>V.role=='s'&&V.prof?.role=='admin';
+const canEdit=p=>isM()||isAd()||!p.elder||own(p);
+const canDel=p=>isM()||(!isAd()&&!p.elder&&!!p.ownerUid&&p.ownerUid==V.user?.uid);
+const noDel=()=>toast('Anda tidak punya izin menghapus data ini');
+const aerr=e=>({'auth/invalid-credential':'Email/user atau password salah','auth/wrong-password':'Email/user atau password salah','auth/user-not-found':'Email/user atau password salah','auth/invalid-email':'Format email tidak valid','auth/email-already-in-use':'Email/user sudah terdaftar, pakai yang lain','auth/weak-password':'Password minimal 6 karakter','auth/too-many-requests':'Terlalu banyak percobaan, coba lagi nanti','auth/requires-recent-login':'Isi password saat ini','auth/network-request-failed':'Jaringan bermasalah','auth/operation-not-allowed':'Aktifkan Email/Password di Firebase Authentication'}[e&&e.code]||(e&&e.message)||'Gagal');
 
 /* ===== TREE ===== */
 A.pgo=d=>pairGo(P(d.x),P(d.y));
@@ -263,15 +316,14 @@ function tree(){
   const kg=ks.length?rows.map(r=>`<div class="kr">${r.map(([c,i])=>`<div class="kc"><div class="bx ${c.gender=='P'?'f':'m'} ${c.id==V.hl?'hl':''}${c.id==V.nw?' new':''}" data-a="go" data-id="${c.id}"><div>${i+1}. ${nm(c)}${c.rel=='tiri'?' (tiri)':''}<small>${c.gender=='P'?'Perempuan':'Laki-laki'}</small></div></div></div>`).join('')}</div>`).join(''):'';
   const lb=`<div class="sw"><div class="bx ${p.gender=='P'?'f':''}${p.id==V.nw?' new':''}" data-a="upp" data-id="${p.id}"><div>${nm(p)}${lmany?' <button class="pen" data-a="dl">▾</button>':''}</div></div>${V.dd=='l'&&lmany?`<div class="dd">${lm.map(x=>`<button data-a="pl" data-id="${x.id}">${x.gender=='P'?'Istri':'Suami'}: ${esc(x.name)}</button>`).join('')}</div>`:''}</div>`,sw=p.gender=='P'&&(!s||s.gender=='L');
   return `<div class="tree"><div class="th">${btn('up','▲','alt')}<h1 class="tt">Silsilah Keluarga<br><span>${esc(((s&&s.gender=='L'&&p.gender!='L')?s:p).name)}</span></h1>${btn('down','▼','alt').replace('class',ks.length?'class':'disabled class')}</div>
-  <p class="hint">Silakan ketuk nama</p>
   <div class="kscroll"><div class="cp">${sw?spb:lb}${mar(p,s)}${sw?lb:spb}</div>
-  ${ks.length?'<div class="lnk"></div><div class="pl">Putra &amp; Putri</div>':''}<div class="kg">${kg}</div>${ket(p,s,ks)}${notes(p,s)}</div></div>`;
+  ${ks.length?'<div class="lnk"></div><div class="pl">Putra &amp; Putri</div>':''}<div class="kg">${kg}</div>${ket(p,s,ks)}</div></div>`;
 }
 
 const IC='width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"';
-const DOOR=`<button class="btn ib buat" data-a="buat" aria-label="Buat" title="Buat"><svg ${IC}><path d="M6 21V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v17"/><path d="M3 21h18"/><circle cx="15" cy="12" r="1" fill="currentColor"/></svg></button>`;
-const PENCIL=`<button class="btn ib edit" data-a="edit" aria-label="Edit" title="Edit"><svg ${IC}><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg></button>`;
-const finder=()=>`<div class="fb"><div class="two">${DOOR}<select class="in" data-c="pe"><option value="">Warga Kaum</option>${Object.values(S.persons).filter(p=>p.elder).map(p=>`<option value="${p.id}" ${p.id==V.eld?'selected':''}>${esc(p.name)}</option>`).join('')}</select><form data-f="q"><input class="in" id="q" data-i="find" placeholder="Cari nama" autocomplete="off"></form>${PENCIL}</div><div class="res" id="res"></div></div>`;
+const DOOR=`<button class="btn ib buat" data-a="buat" aria-label="Buat" title="Buat"><svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><defs><linearGradient id="gdI" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFF3B0"/><stop offset="1" stop-color="#F5A524"/></linearGradient><linearGradient id="gdL" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#8A4B14"/><stop offset=".55" stop-color="#C9822B"/><stop offset="1" stop-color="#E7A74A"/></linearGradient><radialGradient id="gdK" cx=".35" cy=".3" r=".8"><stop offset="0" stop-color="#FFFBD0"/><stop offset="1" stop-color="#B5862B"/></radialGradient></defs><ellipse cx="12.5" cy="22.3" rx="9" ry="1.3" fill="rgba(0,0,0,.35)"/><rect x="3.5" y="1.5" width="15" height="20.5" rx="1.2" fill="#5A3410" stroke="#3a2008" stroke-width=".8"/><rect x="5" y="3" width="12" height="19" fill="url(#gdI)"/><path d="M5 3 L13.6 5.2 L13.6 20.2 L5 22 Z" fill="url(#gdL)" stroke="#4a2a08" stroke-width=".8" stroke-linejoin="round"/><path d="M6.4 5.2 L12.2 6.6 L12.2 11 L6.4 11 Z M6.4 12.6 L12.2 12.6 L12.2 19.6 L6.4 20.6 Z" fill="none" stroke="rgba(255,235,190,.55)" stroke-width=".7" stroke-linejoin="round"/><circle cx="12" cy="13.4" r="1.15" fill="url(#gdK)" stroke="#6b4a10" stroke-width=".5"/><path d="M13.6 5.2 L17 3 M13.6 20.2 L17 22" stroke="#3a2008" stroke-width=".5" opacity=".6"/></svg></button>`;
+const PENCIL=`<button class="btn ib edit" data-a="edit" aria-label="Edit" title="Edit"><svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><defs><linearGradient id="gpB" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#9A6A00"/><stop offset=".25" stop-color="#FFD83D"/><stop offset=".45" stop-color="#FFF6B0"/><stop offset=".75" stop-color="#E0A800"/><stop offset="1" stop-color="#7A5400"/></linearGradient><linearGradient id="gpF" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#7d7d7d"/><stop offset=".4" stop-color="#F4F4F4"/><stop offset="1" stop-color="#8a8a8a"/></linearGradient><linearGradient id="gpE" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#C73A55"/><stop offset=".4" stop-color="#FFA3B4"/><stop offset="1" stop-color="#C73A55"/></linearGradient><linearGradient id="gpW" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#C9A06A"/><stop offset=".5" stop-color="#F7DDB2"/><stop offset="1" stop-color="#C9A06A"/></linearGradient></defs><g transform="rotate(45 12 12)"><rect x="8.6" y="1" width="6.8" height="3.6" rx="1.3" fill="url(#gpE)" stroke="#8a2236" stroke-width=".5"/><rect x="8.6" y="4.6" width="6.8" height="2.6" fill="url(#gpF)" stroke="#555" stroke-width=".4"/><path d="M8.6 5.8H15.4M8.6 6.5H15.4" stroke="#666" stroke-width=".3"/><rect x="8.6" y="7.2" width="6.8" height="9.6" fill="url(#gpB)" stroke="#7A5400" stroke-width=".5"/><path d="M8.6 16.8H15.4L12 22.6Z" fill="url(#gpW)" stroke="#8a6a3a" stroke-width=".5" stroke-linejoin="round"/><path d="M10.9 20.5H13.1L12 22.6Z" fill="#2b2b2b"/></g></svg></button>`;
+const finder=()=>`<div class="fb"><div class="two">${DOOR}<select class="in" data-c="pe"><option value="">Pilih Sesepuh</option>${Object.values(S.persons).filter(p=>p.elder).map(p=>`<option value="${p.id}" ${p.id==V.eld?'selected':''}>${esc(p.name)}</option>`).join('')}</select><form data-f="q"><input class="in" id="q" data-i="find" placeholder="Cari nama" autocomplete="off"></form>${PENCIL}</div><div class="res" id="res"></div></div>`;
 A.find=v=>{const r=hits(v).slice(0,8);$('#res').innerHTML=r.map(p=>`<button data-a="gos" data-id="${p.id}">${al(p)}${esc(p.name)} <span class="mut">· ${esc(fam(p))}</span></button>`).join('')||(v.trim()?'<span class="mut">Nama tidak ditemukan.</span>':'')};
 F.q=()=>{const r=hits($('#q').value)[0];if(!r)return toast('Nama tidak ditemukan');document.activeElement?.blur();A.gos({id:r.id})};
 A.gos=d=>{V.eld=null;A.go(d)};
@@ -296,6 +348,7 @@ A.bk=()=>A.setg(TI());
 A.sg=v=>{v=v.trim().toLowerCase();const el=$('#sg');if(!el)return;const r=v.length<2?[]:Object.values(S.persons).filter(p=>p.name.toLowerCase().includes(v)&&p.id!=TI()).slice(0,5);el.innerHTML=r.length?`<small class="mut">Nama sudah ada. Pakai orang yang sama:</small>`+r.map(p=>`<button type="button" data-a="use" data-id="${p.id}">Pakai ${esc(p.name)}</button>`).join(''):''};
 A.use=async d=>{
   const fm=document.querySelector('form[data-f=add]'),k=fm.dataset.k,p=T(),x=P(d.id),pt=fm.querySelector('[name=pt]')?.value||null;
+  if(k=='kid'&&!canEdit(x))return toast('Data sesepuh tidak bisa diubah');
   try{
     if(k=='sp'){const old=p.spouses||[];await put('persons',p.id,{spouses:[...new Set([...old,x.id])]});await put('persons',x.id,{spouses:[...new Set([...(x.spouses||[]),p.id])]});if(p.id==V.pid)V.si=[...new Set([...old,x.id])].indexOf(x.id)}
     if(k=='kid'){const L=p.gender=='L',o={};o[L?'fatherId':'motherId']=p.id;if(pt)o[L?'motherId':'fatherId']=pt;await put('persons',x.id,o)}
@@ -308,37 +361,121 @@ A.addkid=()=>{const p=T(),ss=sp(p),cur=p.id==V.pid?V.si:0;addForm('kid','Tambah 
 A.addpar=()=>addForm('par','Tambah orang tua',`<label>Sebagai</label><select class="in" name="role"><option value="L">Ayah</option><option value="P">Ibu</option></select>`,'L',null);
 A.addsib=()=>addForm('sib','Tambah saudara',`<label>Status saudara</label><select class="in" name="st"><option value="kandung">Kandung</option><option value="seayah">Seayah saja</option><option value="seibu">Seibu saja</option></select>`,'L',['Jenis kelamin','Laki-laki','Perempuan']);
 A.addrel=()=>addForm('rel','Tambah kerabat',`<label>Hubungan</label><select class="in" name="rt"><option value="kk">Kakek/Nenek</option><option value="pb">Paman/Bibi</option><option value="uwa">Uwa</option></select><label>Dari</label><select class="in" name="sd"><option value="B">Bapak</option><option value="M">Ibu</option></select>`,'L',['Jenis kelamin','Laki-laki','Perempuan']);
-A.eadd=()=>addForm('e','Tambah Kaum','','L',['Jenis kelamin','Laki-laki','Perempuan']);
+A.eadd=()=>addForm('e','Buat silsilah baru','','L',['Jenis kelamin','Laki-laki','Perempuan']);
 
 F.add=async(d,f)=>{
   const k=f.dataset.k,p=k=='e'?null:T(),name=(d.get('name')||'').trim();
   if(!name)return toast('Nama harus diisi');
   if(p){const ex=Object.values(S.persons).find(x=>x.id!=p.id&&x.name.trim().toLowerCase()==name.toLowerCase());if(ex)return A.use({id:ex.id})}
-  const id=nid(),n={name,gender:d.get('g')||'L',owner:me(),spouses:[],ord:Date.now(),rel:d.get('rel')||'kandung',dead:d.get('dead')=='1',birth:d.get('birth')||''};
+  const id=nid(),n={name,gender:d.get('g')||'L',owner:me(),...(V.user?{ownerUid:V.user.uid}:{}),spouses:[],ord:Date.now(),rel:d.get('rel')||'kandung',dead:d.get('dead')=='1',birth:d.get('birth')||''};
   try{
-    if(k=='e'){n.elder=true;await put('persons',id,n);closeM();V.pid=id;V.si=0;draw();toast('Kaum ditambahkan');return}
-    if(!p)return toast('Warga orang dulu');
+    if(k=='e'){await put('persons',id,n);closeM();V.pid=id;V.si=0;V.eld=null;draw();toast('Silsilah dibuat');return}
+    if(!p)return toast('Pilih orang dulu');
     if(k=='sp'){const old=p.spouses||[],fi=d.get('od')=='first';n.spouses=[p.id];await put('persons',id,n);await put('persons',p.id,{spouses:fi?[id,...old]:[...old,id]});if(p.id==V.pid)V.si=fi?0:old.length}
     if(k=='kid'){const pt=d.get('pt')||null;n.fatherId=p.gender=='L'?p.id:pt;n.motherId=p.gender=='L'?pt:p.id;await put('persons',id,n)}
     if(k=='par'){const L=d.get('role')=='L';n.gender=L?'L':'P';await put('persons',id,n);await put('persons',p.id,{[L?'fatherId':'motherId']:id})}
     if(k=='sib'){const t=d.get('st');if((t!='seibu'&&!p.fatherId)||(t!='seayah'&&!p.motherId))throw{message:'Tambahkan orang tua dahulu'};if(t!='seibu')n.fatherId=p.fatherId;if(t!='seayah')n.motherId=p.motherId;await put('persons',id,n)}
-    if(k=='rel'){const t=d.get('rt'),X=P(d.get('sd')=='M'?p.motherId:p.fatherId);if(!X)throw{message:'Tambahkan ayah/ibu dahulu'};if(t=='kk'){await put('persons',id,n);await put('persons',X.id,{[n.gender=='L'?'fatherId':'motherId']:id})}else{if(!X.fatherId&&!X.motherId)throw{message:'Tambahkan kakek/nenek dahulu'};n.fatherId=X.fatherId||null;n.motherId=X.motherId||null;n.ord=(X.ord||0)+(t=='uwa'?-5:5);await put('persons',id,n)}}
+    if(k=='rel'){const t=d.get('rt'),X=P(d.get('sd')=='M'?p.motherId:p.fatherId);if(!X)throw{message:'Tambahkan ayah/ibu dahulu'};if(t=='kk'){if(!canEdit(X))throw{message:'Data sesepuh tidak bisa diubah'};await put('persons',id,n);await put('persons',X.id,{[n.gender=='L'?'fatherId':'motherId']:id})}else{if(!X.fatherId&&!X.motherId)throw{message:'Tambahkan kakek/nenek dahulu'};n.fatherId=X.fatherId||null;n.motherId=X.motherId||null;n.ord=(X.ord||0)+(t=='uwa'?-5:5);await put('persons',id,n)}}
     V.nw=id;setTimeout(()=>{V.nw=null;draw()},3300);closeM();draw();toast('Tersimpan');A.setg(p.id)
   }catch(e){toast(e.message||'Gagal menyimpan')}
 };
 A.ren=()=>modal(`<h3>Ubah nama</h3><form data-f="ren"><input class="in" name="name" value="${esc(T().name)}" required><div class="row"><button type="submit" class="btn">Simpan</button><button type="button" class="btn alt" data-a="closeM">Batal</button></div></form>`);
 F.ren=async d=>{const n=(d.get('name')||'').trim();if(!n)return;await put('persons',TI(),{name:n});toast('Nama diubah');A.setg(TI())};
-A.elder=async()=>{const p=T();await put('persons',p.id,{elder:!p.elder});closeM();draw()};
-A.delp=()=>modal(`<h3>Hapus ${esc(T().name)}?</h3><div class="row">${btn('delok','Ya, hapus','danger')}${btn('closeM','Batal','alt')}</div>`);
+A.promo=d=>{
+  if(!isM())return toast('Khusus sesepuh utama');
+  const p=T(),k=(d&&d.k)||'e',need=k=='a'||!!p.elder;
+  const ttl=k=='a'?'Jadikan Admin':(p.elder?'Akun login':'Jadikan Sesepuh');
+  const note=k=='a'?'Admin masuk lewat tab Sesepuh. Bisa mengedit semuanya, tetapi tidak bisa menghapus dan tidak bisa mengangkat sesepuh/admin.':(need?'':'Email/user dan password boleh dikosongkan. Akun login bisa diberikan nanti.');
+  modal(`<h3>${ttl}: ${esc(p.name)}</h3><form data-f="promo"><input type="hidden" name="kind" value="${k}"><input type="hidden" name="need" value="${need?1:0}"><label>Email atau user</label><input class="in" name="em" ${need?'required':''} autocomplete="off" autocapitalize="off"><label>Password (min. 6 karakter)</label>${pwBox('pw','Password','new-password',need)}<small class="mut">${note}</small><div class="row"><button type="submit" class="btn">Simpan</button><button type="button" class="btn alt" data-a="bk">Batal</button></div></form>`);
+};
+A.elder=()=>{
+  if(!isM())return toast('Khusus sesepuh utama');
+  const p=T();if(!p.elder)return A.promo({k:'e'});
+  modal(`<h3>Lepas sesepuh ${esc(p.name)}?</h3><p class="mut" style="font-size:.8rem">Akun loginnya (bila ada) tidak berlaku lagi.</p><div class="row">${btn('unelder','Ya, lepas','danger')}${btn('bk','Batal','alt')}</div>`);
+};
+A.adm=()=>{
+  if(!isM())return toast('Khusus sesepuh utama');
+  const p=T();if(!p.admin)return A.promo({k:'a'});
+  modal(`<h3>Lepas admin ${esc(p.name)}?</h3><p class="mut" style="font-size:.8rem">Akun loginnya tidak berlaku lagi.</p><div class="row">${btn('unelder','Ya, lepas','danger')}${btn('bk','Batal','alt')}</div>`);
+};
+A.unelder=async()=>{
+  if(!isM())return;const p=T();
+  try{
+    if(p.uid&&db)await fx.deleteDoc(fx.doc(db,'users',p.uid));
+    await put('persons',p.id,p.admin?{admin:false,uid:''}:{elder:false,uid:''});
+    toast('Dilepas');A.setg(p.id);
+  }catch(e){toast(aerr(e))}
+};
+A.acct=async()=>{
+  if(!isM())return toast('Khusus sesepuh utama');
+  const p=T();if(!p.uid)return A.promo({k:p.admin?'a':'e'});
+  let em='';
+  try{const sn=await fx.getDoc(fx.doc(db,'users',p.uid));em=(sn.data()||{}).email||''}catch(e){return toast(aerr(e))}
+  modal(`<h3>Kelola akun: ${esc(p.name)}</h3><form data-f="acct"><input type="hidden" name="old" value="${esc(em)}"><label>Email atau user</label><input class="in" name="em" value="${esc(em)}" required autocapitalize="off"><label>Password baru</label>${pwBox('pw','Password baru (min. 6 karakter)','new-password',true)}<label>Password lama</label>${pwBox('cur','Isi bila email/user tidak diganti','current-password')}<small class="mut">Ganti email/user: kosongkan password lama (akun baru dibuat, akun lama dicabut). Ganti password saja: isi password lama sesepuh itu.</small><div class="row"><button type="submit" class="btn">Simpan</button><button type="button" class="btn alt" data-a="bk">Batal</button></div></form>`);
+};
+F.acct=async d=>{
+  if(!isM())return toast('Khusus sesepuh utama');
+  const p=T();let em=(d.get('em')||'').trim().toLowerCase();const old=(d.get('old')||'').toLowerCase(),pw=d.get('pw')||'',cur=d.get('cur')||'';
+  if(!em)return toast('Isi email atau user');
+  if(!em.includes('@'))em+=ALIAS;
+  if(pw.length<6)return toast('Password minimal 6 karakter');
+  if(!fx||!db||!p.uid)return toast('Belum tersambung');
+  try{
+    let app2;try{app2=fx.getApp('sec')}catch{app2=fx.initializeApp(FB,'sec')}
+    const a2=fx.getAuth(app2);
+    if(em==old){
+      if(!cur)return toast('Isi password lama sesepuh ini');
+      const c=await fx.signInWithEmailAndPassword(a2,em,cur);
+      await fx.updatePassword(c.user,pw);await fx.signOut(a2);
+      toast('Password diganti');
+    }else{
+      const ex=(await fx.getDoc(fx.doc(db,'users',p.uid))).data()||{};
+      const cr=await fx.createUserWithEmailAndPassword(a2,em,pw);
+      const uid=cr.user.uid;await fx.signOut(a2);
+      await fx.setDoc(fx.doc(db,'users',uid),{name:ex.name||p.name,email:em,phone:ex.phone||'',role:ex.role||'sesepuh',personId:p.id});
+      await fx.deleteDoc(fx.doc(db,'users',p.uid));
+      await put('persons',p.id,{uid});
+      toast('User dan password diganti');
+    }
+    A.setg(p.id);
+  }catch(e){try{await fx.signOut(fx.getAuth(fx.getApp('sec')))}catch{}toast(aerr(e))}
+};
+F.promo=async(d)=>{
+  if(!isM())return toast('Khusus sesepuh utama');
+  const p=T(),kind=d.get('kind')=='a'?'a':'e',need=d.get('need')=='1';
+  let em=(d.get('em')||'').trim().toLowerCase();const pw=d.get('pw')||'';
+  try{
+    if(!em&&!pw){
+      if(need)return toast('Isi email/user dan password');
+      await put('persons',p.id,{elder:true});
+      toast(p.name+' kini sesepuh (tanpa akun login)');A.setg(p.id);return;
+    }
+    if(!em)return toast('Isi email atau user');
+    if(!em.includes('@'))em+=ALIAS;
+    if(pw.length<6)return toast('Password minimal 6 karakter');
+    if(!fx||!db)return toast('Belum tersambung');
+    let app2;try{app2=fx.getApp('sec')}catch{app2=fx.initializeApp(FB,'sec')}
+    const a2=fx.getAuth(app2);
+    const cr=await fx.createUserWithEmailAndPassword(a2,em,pw);
+    const uid=cr.user.uid;await fx.signOut(a2);
+    await fx.setDoc(fx.doc(db,'users',uid),{name:p.name,email:em,phone:'',role:kind=='a'?'admin':'sesepuh',personId:p.id});
+    await put('persons',p.id,kind=='a'?{admin:true,uid}:{elder:true,uid});
+    toast(p.name+(kind=='a'?' kini admin':' kini sesepuh'));A.setg(p.id);
+  }catch(e){try{await fx.signOut(fx.getAuth(fx.getApp('sec')))}catch{}toast(aerr(e))}
+};
+
+A.delp=()=>{const p=T();if(!canDel(p))return noDel();modal(`<h3>Hapus ${esc(T().name)}?</h3><div class="row">${btn('delok','Ya, hapus','danger')}${btn('closeM','Batal','alt')}</div>`)};
 A.delok=async()=>{
-  const p=T();
+  const p=T();if(!canDel(p))return noDel();
   snap('sebelum hapus '+p.name);
   for(const x of Object.values(S.persons)){
     const u={};
     if(x.fatherId==p.id)u.fatherId=null;if(x.motherId==p.id)u.motherId=null;
     if((x.spouses||[]).includes(p.id))u.spouses=x.spouses.filter(i=>i!=p.id);
+    if(!canEdit(x)){delete u.fatherId;delete u.motherId}
     if(Object.keys(u).length)try{await put('persons',x.id,u)}catch{}
   }
+  if(p.uid&&db&&isM())try{await fx.deleteDoc(fx.doc(db,'users',p.uid))}catch{}
   try{await del('persons',p.id)}catch{}
   if(p.id==V.pid)V.pid=null;if(V.eld==p.id)V.eld=null;V.tg=null;closeM();draw()
 };
@@ -346,12 +483,12 @@ A.delok=async()=>{
 A.setg=prev=>{
   const pv=typeof prev=='string'?prev:null;
   const p=P(V.pid),s=p&&sp(p)[V.si],e=V.eld&&P(V.eld),o=[];
-  if(e)o.push(['e',e.id,'Kaum: '+al(e)+e.name]);
+  if(e)o.push(['e',e.id,'Sesepuh: '+al(e)+e.name]);
   if(p)o.push(['d',p.id,al(p)+p.name]);
   if(s)o.push(['s',s.id,(s.gender=='P'?'Istri: ':'Suami: ')+al(s)+s.name]);
-  o.push(['n','','+ Kaum baru']);
+  o.push(['n','','+ Silsilah baru']);
   V.tg=null;
-  modal(`<div style="display:flex;gap:8px;align-items:center"><select class="in" data-c="stg" style="flex:1;min-width:0"><option value="">Warga…</option>${o.map(([k,id,t])=>`<option value="${k}:${id}">${esc(t)}</option>`).join('')}</select><button type="button" class="btn c2" data-a="closeM">Tutup</button></div><div id="stb"></div>`,true);
+  modal(`<div style="display:flex;gap:8px;align-items:center"><select class="in" data-c="stg" style="flex:1;min-width:0"><option value="">Pilih…</option>${o.map(([k,id,t])=>`<option value="${k}:${id}">${esc(t)}</option>`).join('')}</select><button type="button" class="btn c2" data-a="closeM">Tutup</button></div><div id="stb"></div>`,true);
   if(pv){const op=[...document.querySelectorAll('select[data-c=stg] option')].find(x=>x.value.endsWith(':'+pv));if(op){op.parentNode.value=op.value;A.stg(op.value)}}
 };
 const posForm=p=>{
@@ -359,14 +496,14 @@ const posForm=p=>{
   if(cs&&p.id==cs.id&&sp(cp).length>1)ow=cp;else if(cp&&p.id==cp.id&&cs&&sp(cs).length>1)ow=cs;
   const sel=(n,name,cur)=>`<select class="in" name="${name}" style="width:auto">${Array.from({length:n},(_,i)=>`<option value="${i+1}" ${i+1==cur?'selected':''}>${i+1}</option>`).join('')}</select>`;
   const ws=ow?(ow.spouses||[]).filter(P):[];
-  const pr=cp&&cs&&(p.id==cp.id||p.id==cs.id)?(p.id==cp.id?cs:cp):null;
+  let pr=cp&&cs&&(p.id==cp.id||p.id==cs.id)?(p.id==cp.id?cs:cp):null;if(pr&&!canEdit(pr))pr=null;
   return `<form data-f="pos"><label>Status</label><select class="in" name="dead"><option value="0">Hidup</option><option value="1" ${p.dead?'selected':''}>Meninggal</option></select><label>Lahir</label><input class="in" type="date" name="birth" value="${p.birth||''}">${p.birth?`<small class="mut">Usia: ${age(p)}</small>`:''}${sb.length>1?`<label>Anak ke-</label>${sel(sb.length,'rk',rank(p))}`:''}${ow?`<input type="hidden" name="so" value="${ow.id}"><label>Pasangan ke-</label>${sel(ws.length,'sk',ws.indexOf(p.id)+1)}`:''}${pr?`<input type="hidden" name="mp" value="${pr.id}"><label>Pernikahan dengan ${esc(pr.name)}</label><select class="in" name="mar"><option value="0">Menikah</option><option value="1" ${isDiv(p,pr)?'selected':''}>Cerai</option></select>`:''}<div class="row"><button type="submit" class="btn">Simpan</button></div></form>`;
 };
 F.pos=async d=>{
   const p=T();
   try{
     await put('persons',p.id,{dead:d.get('dead')=='1',birth:d.get('birth')||''});
-    if(d.get('rk')&&+d.get('rk')!=rank(p)){const sb=sibsOf(p).filter(x=>x.id!=p.id);sb.splice(+d.get('rk')-1,0,p);for(let i=0;i<sb.length;i++)if(sb[i].ord!==i*10)await put('persons',sb[i].id,{ord:i*10})}
+    if(d.get('rk')&&+d.get('rk')!=rank(p)){const sb=sibsOf(p).filter(x=>x.id!=p.id);sb.splice(+d.get('rk')-1,0,p);for(let i=0;i<sb.length;i++)if(sb[i].ord!==i*10&&canEdit(sb[i]))await put('persons',sb[i].id,{ord:i*10})}
     if(d.get('so')){const ow=P(d.get('so')),ex=(ow.spouses||[]).filter(P).filter(i=>i!=p.id);ex.splice(+d.get('sk')-1,0,p.id);await put('persons',ow.id,{spouses:ex});if(ow.id==V.pid)V.si=ex.indexOf(p.id)}
     if(d.get('mp')){const q=P(d.get('mp')),dv=d.get('mar')=='1',st=(x,y)=>{const a=(P(x).div||[]).filter(i=>i!=y);return dv?[...a,y]:a};if(q&&dv!=isDiv(P(p.id),q)){await put('persons',p.id,{div:st(p.id,q.id)});await put('persons',q.id,{div:st(q.id,p.id)})}}
   }catch(e){return toast(e.message||'Gagal')}
@@ -375,12 +512,21 @@ F.pos=async d=>{
 A.stg=v=>{
   const[k,id]=v.split(':');if(k=='n')return A.eadd();
   if(!id){V.tg=null;$('#stb').innerHTML='';return}
-  V.tg=id;const p=P(id);
-  $('#stb').innerHTML=`<div class="nt"><b>${al(p)}${esc(p.name)}</b>
+  V.tg=id;const p=P(id),m=isM();
+  let more='';
+  if(m){
+    if(!p.admin){more+=btn('elder',p.elder?'Lepas Sesepuh':'Jadikan Sesepuh','alt');if(p.elder&&!p.uid)more+=btn('promo','Beri akun login','c4').replace('<button','<button data-k="e"')}
+    if(!p.elder)more+=btn('adm',p.admin?'Lepas Admin':'Jadikan Admin','alt');
+    if(p.uid)more+=btn('acct','Kelola akun','c4');
+  }
+  if(canDel(p))more+=btn('delp','Hapus','danger');
+  $('#stb').innerHTML=!canEdit(p)
+  ?`<div class="nt"><b>${al(p)}${esc(p.name)}</b><p class="mut" style="font-size:.8rem;margin:4px 0 0">Data sesepuh hanya bisa diubah oleh sesepuh utama atau sesepuh yang bersangkutan. Anda tetap bisa mengaitkan silsilah ke sesepuh ini.</p><div class="row">${btn('addsp','+ Pasangan','c2')}${btn('addkid','+ Anak','c3')}${btn('addsib','+ Saudara','c4')}</div></div>`
+  :`<div class="nt"><b>${al(p)}${esc(p.name)}</b>
     <form data-f="ren"><label>Nama</label><input class="in" name="name" value="${esc(p.name)}" required><div class="row"><button type="submit" class="btn">Simpan nama</button></div></form>
     ${posForm(p)}
     <div class="row">${btn('addpar','+ Orang Tua','c1')}${btn('addsp','+ Pasangan','c2')}${btn('addkid','+ Anak','c3')}${btn('addsib','+ Saudara','c4')}${btn('addrel','+ Kerabat','c5')}</div>
-    <details class="more"><summary>Lainnya</summary><div class="row">${btn('elder',p.elder?'Lepas Kaum':'Jadikan Kaum','alt')}${btn('delp','Hapus','danger')}</div></details></div>`;
+    ${more?`<details class="more"><summary>Lainnya</summary><div class="row">${more}</div></details>`:''}</div>`;
 };
 
 /* ===== CADANGAN DATA ===== */
@@ -394,10 +540,10 @@ function snap(why,data){
 }
 A.bsave=()=>{
   if(!Object.keys(S.persons).length)return toast('Belum ada data');
-  const d={app:'sakaum',versi:1,waktu:new Date().toISOString(),persons:S.persons};
+  const d={app:'sadudulur',versi:1,waktu:new Date().toISOString(),persons:S.persons};
   const a=document.createElement('a');
   a.href=URL.createObjectURL(new Blob([JSON.stringify(d,null,1)],{type:'application/json'}));
-  a.download='sakaum-cadangan-'+new Date().toISOString().slice(0,10)+'.json';
+  a.download='sadudulur-cadangan-'+new Date().toISOString().slice(0,10)+'.json';
   document.body.appendChild(a);a.click();a.remove();
   setTimeout(()=>URL.revokeObjectURL(a.href),4000);toast('Cadangan disimpan ke perangkat');
 };
@@ -433,7 +579,7 @@ function modal(h,fl){
 function closeM(){const m=$('#modal');m.className='';m.innerHTML='';document.body.classList.remove('mo')}
 A.closeM=()=>closeM();
 addEventListener('keydown',e=>{if(e.key=='Escape')closeM()});
-let tt;function toast(t){const e=$('#toast');e.textContent=t;e.style.display='block';clearTimeout(tt);tt=setTimeout(()=>e.style.display='none',2500)}
+let tt;function toast(t,ms=2500){const e=$('#toast');e.textContent=t;e.style.display='block';clearTimeout(tt);tt=setTimeout(()=>e.style.display='none',ms)}
 
 /* Perkecil huruf otomatis sampai nama utuh muat di kotak (tanpa dipotong) */
 function fit(){
@@ -449,16 +595,96 @@ function fit(){
 addEventListener('resize',fit);
 document.fonts&&document.fonts.ready.then(fit);
 
+const redraw=()=>{$('#app').dataset.sig='';draw()};
+const EYE=`<svg ${IC}><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/></svg>`,EYEX=`<svg ${IC}><path d="M3 3l18 18"/><path d="M10.6 6.1A9.8 9.8 0 0 1 12 5c6.5 0 10 7 10 7a17 17 0 0 1-3 3.9M6.6 6.6A16.6 16.6 0 0 0 2 12s3.5 7 10 7a9.7 9.7 0 0 0 4.2-.9"/></svg>`;
+const pwBox=(name,ph,ac,req)=>`<div class="pw"><input class="in" name="${name}" type="password" placeholder="${ph}" autocomplete="${ac}" ${req?'required':''}><button type="button" class="eye" data-a="eye" aria-label="Lihat password">${EYE}</button></div>`;
+A.eye=(d,b)=>{const i=b.parentNode.querySelector('input');const h=i.type=='password';i.type=h?'text':'password';b.innerHTML=h?EYEX:EYE};
+const gateHTML=()=>`<div class="wrap"><div class="gt"><div class="gr"><h2>Masuk sebagai</h2><select class="in" data-c="gr"><option value="">Pilih…</option><option value="s" ${V.gs?'selected':''}>Sesepuh</option><option value="w">Warga</option></select></div>${V.gs?`<form data-f="login"><input class="in" name="em" placeholder="Email atau user" autocomplete="username" autocapitalize="off" required>${pwBox('pw','Password','current-password',true)}<label class="ck"><input type="checkbox" name="keep"> Tetap login</label><button class="btn c3" type="submit">Masuk</button></form>`:''}</div>${clockHTML()}</div>`;
+const barHTML=()=>V.role=='s'
+  ?`<div class="tb rb"><button class="${V.tab=='prof'?'':'on'}" data-a="tab" data-t="tree">Silsilah</button><button class="${V.tab=='prof'?'on':''}" data-a="tab" data-t="prof">Profil</button><button class="x" data-a="keluar">Keluar</button></div>`
+  :`<div class="tb rb"><button class="on" data-a="noop">Warga</button><button class="x" data-a="keluar">Keluar</button></div>`;
+const profHTML=()=>{
+  const u=V.user||{},pr=V.prof||{},m=isM();
+  return `<div class="pf"><h2>Profil Saya</h2><form data-f="prof"><label>Nama</label><input class="in" name="name" value="${esc(pr.name||'')}" required><label>Email</label><input class="in" name="email" type="email" value="${esc(u.email||'')}" ${m?'readonly':''} autocapitalize="off"><label>No. HP</label><input class="in" name="phone" type="tel" value="${esc(pr.phone||'')}"><label>Password baru</label>${pwBox('pw','Kosongkan bila tidak diganti','new-password')}<label>Password saat ini</label>${pwBox('cur','Wajib bila ganti password/email','current-password')}<button type="submit" class="btn">Simpan</button></form></div>`;
+};
+A.gs=()=>{V.gs=true;redraw()};
+A.gr=v=>{if(v=='w')A.role();else if(v=='s')A.gs();else{V.gs=false;redraw()}};
+const anon=async()=>{
+  if(!au||V.user)return;
+  try{await fx.setPersistence(au,fx.browserLocalPersistence)}catch(e){console.warn('persist',e)}
+  try{await fx.signInAnonymously(au)}
+  catch(e){console.warn('anon',e);toast('Penanda warga gagal ('+(e.code||e.message)+'). Cek Authentication > Anonymous aktif.',7000)}
+};
+A.role=()=>{V.role='w';V.gs=false;V.tab='tree';redraw();anon()};
+A.tab=d=>{closeM();V.tab=d.t;redraw()};
+A.keluar=async()=>{
+  closeM();V.tg=null;V.tab='tree';V.gs=false;
+  if(au&&V.user&&V.role=='s'){try{await fx.signOut(au)}catch{}V.user=null}
+  V.role=null;V.prof=null;redraw();
+};
+F.login=async d=>{
+  if(!au)return toast('Menyambung ke server, coba sebentar lagi');
+  let em=(d.get('em')||'').trim().toLowerCase();if(!em)return;if(!em.includes('@'))em+=ALIAS;
+  try{try{await fx.setPersistence(au,d.get('keep')?fx.browserLocalPersistence:fx.browserSessionPersistence)}catch(e){console.warn('persist',e)}await fx.signInWithEmailAndPassword(au,em,d.get('pw')||'')}catch(e){toast(aerr(e))}
+};
+F.prof=async(d,f)=>{
+  const u=V.user;if(!u||!db)return toast('Belum tersambung');
+  const name=(d.get('name')||'').trim(),phone=(d.get('phone')||'').trim(),em=(d.get('email')||'').trim().toLowerCase(),pw=d.get('pw')||'',cur=d.get('cur')||'';
+  if(!name)return toast('Nama harus diisi');
+  if(pw&&pw.length<6)return toast('Password minimal 6 karakter');
+  const chEm=!isM()&&em&&em!=(u.email||'').toLowerCase();
+  try{
+    if(pw||chEm){
+      if(!cur)return toast('Isi password saat ini');
+      await fx.reauthenticateWithCredential(u,fx.EmailAuthProvider.credential(u.email,cur));
+    }
+    if(pw)await fx.updatePassword(u,pw);
+    let msg='Profil tersimpan';
+    if(chEm){await fx.verifyBeforeUpdateEmail(u,em);msg='Tersimpan. Buka link verifikasi di email baru'}
+    await fx.setDoc(fx.doc(db,'users',u.uid),isM()?{name,phone,email:u.email,role:'master'}:{name,phone},{merge:true});
+    V.prof={...(V.prof||{}),name,phone};
+    const pid=V.prof.personId;if(pid&&P(pid)&&P(pid).name!=name)await put('persons',pid,{name});
+    f.querySelector('[name=pw]').value='';f.querySelector('[name=cur]').value='';
+    toast(msg);
+  }catch(e){toast(aerr(e))}
+};
+async function authChanged(u){
+  const was=V.role;
+  if(!u){V.user=null;V.prof=null;if(was=='s'){V.role=null;V.tab='tree';redraw()}if(V.role=='w')anon();return}
+  if(u.isAnonymous){V.user=u;return}
+  try{
+    const m=(u.email||'').toLowerCase()==MASTER;
+    const sn=await fx.getDoc(fx.doc(db,'users',u.uid));
+    if(!m&&!sn.exists()){await fx.signOut(au);toast('Akun ini bukan sesepuh');return}
+    V.user=u;V.prof=sn.exists()?sn.data():{};V.role='s';V.tab='tree';V.gs=false;
+    if(!m&&V.prof.email&&V.prof.email!=u.email)try{await fx.setDoc(fx.doc(db,'users',u.uid),{email:u.email},{merge:true})}catch{}
+    redraw();toast('Berhasil masuk');
+  }catch(e){try{await fx.signOut(au)}catch{}toast('Gagal memuat akun: '+(e.message||e))}
+}
+
 function draw(){
+  const app=$('#app');
+  document.body.classList.toggle('nb',!isM());
+  if(!V.role){
+    closeM();
+    const sg='g'+(V.gs?1:0);
+    if(app.dataset.sig==sg&&app.querySelector('.gt'))return tick();
+    app.dataset.sig=sg;app.innerHTML=gateHTML();tick();return;
+  }
+  if(V.role=='s'&&V.tab=='prof'){
+    if(app.dataset.sig=='p'&&app.querySelector('.pf'))return;
+    app.dataset.sig='p';app.innerHTML=`<div class="wrap">${barHTML()}${profHTML()}</div>`;return;
+  }
+  app.dataset.sig='';
   const p=P(V.pid);
   if(!p)V.pid=null;
   const kosong=!Object.keys(S.persons).length;
-  $('#app').innerHTML=`<!-- <section class="hero"><h1><span class="y">sakaum</span><br>Silsilah Keluarga</h1></section> -->
-    <div class="wrap">
+  app.innerHTML=`<div class="wrap">
+    ${barHTML()}
     ${finder()}
     ${kosong?'<p class="mut" style="text-align:center;margin:16px 0">Belum ada data. Tekan <b>Buat</b>.</p>':''}
     ${p?tree():(kosong?'':clockHTML())}
-    ${backupBox()}
+    ${isM()?backupBox():''}
     </div>`;
   fit();tick();
 }
@@ -466,7 +692,7 @@ A.buat=()=>A.eadd();
 A.edit=()=>{
   if(!Object.keys(S.persons).length)return toast('Belum ada data. Tekan Buat dulu.');
   const p=P(V.pid)||Object.values(S.persons).find(x=>x.elder)||Object.values(S.persons)[0];
-  V.pid=p.id;V.si=0;draw();
+  if(V.pid!=p.id)V.si=0;V.pid=p.id;draw();
   A.setg(p.id);
 };
 
@@ -508,8 +734,8 @@ if(!S.persons)S.persons={};
 draw();
 
 if(LIVE){
-  Promise.all([import(V9+'firebase-app.js'),import(V9+'firebase-firestore.js')]).then(([fa,fs])=>{
-    fx={...fa,...fs};
+  Promise.all([import(V9+'firebase-app.js'),import(V9+'firebase-firestore.js'),import(V9+'firebase-auth.js')]).then(([fa,fs,fu])=>{
+    fx={...fa,...fs,...fu};
     const app=fa.initializeApp(FB);
     try{db=fs.initializeFirestore(app,{localCache:fs.persistentLocalCache({tabManager:fs.persistentMultipleTabManager()})})}catch(e){db=fs.getFirestore(app)}
     fs.onSnapshot(fs.collection(db,'persons'),s=>{
@@ -519,6 +745,8 @@ if(LIVE){
       if(!window.__d1){window.__d1=1;const l=bkList();if(!l.length||Date.now()-l[0].t>864e5)snap('harian',n)}
       writeLS();drawSoon();
     },err=>console.warn('snapshot',err));
+    try{au=fu.initializeAuth(app,{persistence:[fu.indexedDBLocalPersistence,fu.browserLocalPersistence,fu.browserSessionPersistence]})}catch(e){au=fu.getAuth(app)}
+    fu.onAuthStateChanged(au,authChanged);
     Q.splice(0).forEach(f=>f());
   }).catch(e=>{console.warn('firebase',e);toast('Firebase gagal: '+e.message)});
 }
